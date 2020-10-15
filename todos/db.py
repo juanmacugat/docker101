@@ -5,9 +5,9 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 engine = create_engine('postgresql://{user}:{password}@{host}:5432/{db}'.format(
-    user="admin",
-    password= "admin",
-    host="192.168.1.5",
+    user=os.environ["DB_USER"],
+    password=os.environ["DB_PASS"],
+    host=os.environ["DB_HOST"],
     db="todo"))
 
 Session = sessionmaker(bind=engine)
