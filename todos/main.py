@@ -41,4 +41,4 @@ def todo():
 
 if __name__ == "__main__":
     db.Base.metadata.create_all(db.engine)
-    app.run(port=9090, debug=True)
+    app.run(port=9090, debug=True, host="0.0.0.0")
